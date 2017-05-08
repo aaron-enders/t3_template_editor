@@ -1,0 +1,90 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    234,
+                    209
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+                        "index"
+                    ]
+                },
+                "name": "Editor",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1029333742168"
+                },
+                "propertyGroup": {
+                    "properties": []
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+            {
+                "actions": {
+                    "controllerActionCombinations": ""
+                },
+                "description": "",
+                "key": "editor",
+                "mainModule": "tools",
+                "name": "editor",
+                "tabLabel": "Template Editor"
+            }
+        ],
+        "description": "",
+        "emConf": {
+            "category": "module",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2.0-6.2.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "version": ""
+        },
+        "extensionKey": "template_editor",
+        "name": "Template Editor",
+        "originalExtensionKey": "template",
+        "persons": [
+            {
+                "company": "aaron-enders.de",
+                "email": "mail@aaron-enders.de",
+                "name": "Aaron Enders",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "TemplateEditor"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2017-05-06 02:23",
+        "extension_builder_version": "6.2",
+        "be_user": " (1)"
+    }
+}

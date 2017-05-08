@@ -1,0 +1,97 @@
+
+ # Module configuration
+module.tx_templateeditor_editor {
+	persistence {
+		storagePid = {$module.tx_templateeditor_editor.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_templateeditor_editor.view.templateRootPath}
+		partialRootPath = {$module.tx_templateeditor_editor.view.partialRootPath}
+		layoutRootPath = {$module.tx_templateeditor_editor.view.layoutRootPath}
+	}
+}
+
+
+
+
+# page = PAGE
+# page.10 = FLUIDTEMPLATE
+# page.10 {
+# 	template = FILE
+# 	template.file = fileadmin/templates/index.html
+# 	variables {
+# 		content < styles.content.get
+# 	}
+# }
+
+
+
+#Erzeugen eines Pageobjekt in "page"
+page = PAGE
+ 
+#Zuweisen des Sytlesheet Files 
+page.stylesheet = style.css
+ 
+#Typ der Seite ist 0, hiermit können verschiedene 
+#Typen ausgewählt werden z.b. für eine Druckansicht
+page.typeNum = 0
+ 
+page.10 = TEMPLATE
+ 
+#Template ist eine Datei 
+page.10.template = FILE
+ 
+#Der Dateiname ist template.html
+page.10.template.file = fileadmin/templates/csc/index.html
+ 
+#Den Subpart DOCUMENT BODY bearbeiten
+page.10.workOnSubpart = DOCUMENT_BODY
+#Innerhalb von Documtent Body weitere Subparts bearbeiten
+page.10.subparts {
+    #Der Subpart CONTENT wird mit 
+        #der Ausgabe von styles.content.get ersetzt
+    #dies entspricht der mittleren Contentspalte 
+    CONTENT < styles.content.get
+     
+    #Der Subpart MENU ist ein hierachisches Menü 
+    MENU = HMENU 
+ 
+    #Die 1. Ebene des Menüs ist ein Textmenü
+    MENU.1 = TMENU
+    MENU.1 {
+        NO = 1
+        #Die Einträge werden umschlossen von 
+                #<div class="level1"> </div> 
+        NO.allWrap = <div class="level1"> | </div> 
+    } 
+     
+    #Die 2. Ebene ist ebenfalls ein Textmenü
+    MENU.2 = TMENU
+    MENU.2 {
+        NO = 1
+        #Die Einträge werden umschlossen 
+                #von <div class="level2"> </div> 
+        NO.allWrap = <div class="level2"> | </div> 
+    } 
+}
+ 
+#An dieser Stelle werden die Marker 
+#im Template (page.10) bearbeitet
+ 
+page.10.marks{
+    #Der Marker LOGO ist ein Bild
+    LOGO = IMAGE
+ 
+    #Die Datei für das Bild ist die 
+        #Datei logo-typo3.gif
+    LOGO.file = logo-typo3.gif
+     
+    #Der Marker Rootline ist ein hierachisches Menü
+    ROOTLINE = HMENU
+    ROOTLINE.special=rootline
+    ROOTLINE.special.range= 0 | -1
+    ROOTLINE.1=TMENU
+ 
+    #Die einzelnen Einträge werden durch Slashes getrennt
+    ROOTLINE.1.NO.allWrap= |   /   |*| |   /   |*| |
+}
